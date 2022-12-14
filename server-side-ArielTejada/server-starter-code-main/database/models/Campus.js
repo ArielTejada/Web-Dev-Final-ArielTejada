@@ -20,6 +20,13 @@ const Campus = db.define("campus", {
 
   description: {
     type: Sequelize.STRING,
+    allowNull: true
+  },
+
+  imageUrl: {
+    type: Sequelize.STRING,
+    defaultValue: 'https://news.rhodes.edu/sites/news/files/styles/600x600/public/2018-11/Rhodes%20College-Beautiful%20Campus.jpg?itok=SqbUpfts',
+    allowNull: true
   }
 });
 
