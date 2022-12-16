@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 // Create styling for the input form
-const useStyles = makeStyles( () => ({
+const styles = makeStyles( () => ({
   formContainer:{  
     width: '500px',
     backgroundColor: '#f0f0f5',
@@ -17,16 +17,19 @@ const useStyles = makeStyles( () => ({
     margin: 'auto',
   },
   title: {
-    flexGrow: 1,
-    textAlign: 'left',
-    textDecoration: 'none'
+    textAlign: 'center',
+    textDecoration: 'none',
+    fontFamily: 'Arial',
+    fontSize: '3rem',
+    outline: '2px solid black',
+    backgroundColor: '#00A6ED'
   }, 
   customizeAppBar:{
     backgroundColor: '#11153e',
     shadows: ['none'],
   },
   formTitle:{
-    backgroundColor:'#c5c8d6',
+    backgroundColor:'#00A6ED',
     marginBottom: '15px',
     textAlign: 'center',
     borderRadius: '5px 5px 0px 0px',
@@ -36,17 +39,17 @@ const useStyles = makeStyles( () => ({
 
 const NewStudentView = (props) => {
   const {handleChange, handleSubmit } = props;
-  const classes = useStyles();
+  const classes = styles();
 
   // Render a New Student view with an input form
   return (
     <div>
-      <h1>New Student</h1>
+      <h1 className={classes.title}>New Student</h1>
 
       <div className={classes.root}>
         <div className={classes.formContainer}>
           <div className={classes.formTitle}>
-            <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
+            <Typography style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '2rem', color: '#11153e'}}>
               Add a Student
             </Typography>
           </div>
@@ -63,6 +66,16 @@ const NewStudentView = (props) => {
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus Id: </label>
             <input type="text" name="campusId" onChange={(e) => handleChange(e)} />
+            <br/>
+            <br/>
+
+            <label style= {{color:'#11153e', fontWeight: 'bold'}}>Email: </label>
+            <input type="text" name="email" onChange ={(e) => handleChange(e)} />
+            <br/>
+            <br/>
+
+            <label style= {{color:'#11153e', fontWeight: 'bold'}}>GPA: </label>
+            <input type="text" name="gpa" onChange ={(e) => handleChange(e)} />
             <br/>
             <br/>
 
