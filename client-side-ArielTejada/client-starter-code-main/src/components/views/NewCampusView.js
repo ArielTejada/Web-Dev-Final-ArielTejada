@@ -26,12 +26,12 @@ const styles = makeStyles(() => ({
     borderRadius: "40px",
   },
   title: {
-    flexGrow: 1,
     textAlign: "left",
     fontType: "bold",
     fontFamily: "Georgia, serif",
-    fontSize: "80px",
+    fontSize: "3rem",
     color: "#66FCF1",
+    marginRight: '10%'
   },
   appBar: {
     backgroundColor: "#1F2833",
@@ -48,9 +48,12 @@ const styles = makeStyles(() => ({
   },
   links: {
     textDecoration: "none",
+    display: 'flex',
+    flexDirection: 'row',
   },
   formContainer: {
-    width: "500px",
+    marginTop: "5%",
+    width: "45%",
     backgroundColor: "#f0f0f5",
     borderRadius: "5px",
     margin: "auto",
