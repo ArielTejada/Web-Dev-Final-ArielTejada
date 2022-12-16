@@ -20,48 +20,6 @@ export const fetchAllCampusesThunk = () => async (dispatch) => {  // The THUNK
   }
 };
 
-// Add Campus
-// THUNK CREATOR:
-export const addCampusThunk = (campus) => async (dispatch) => {  // The THUNK
-  try {
-    // API "post" call to add "campus" object's data to database
-    let res = await axios.post(`/api/campuses`, campus);
-    // Call action Creator to return Action object (type + payload with new students data)
-    // Then dispatch the Action object to Reducer to update state
-    dispatch(ac.addCampus(res.data));
-    return res.data;
-    } catch (err) {
-      console.log(err);
-    }
-};
-
-// Delete Campus
-// THUNK CREATOR:
-export const deleteCampusThunk = (campusId) => async (dispatch) => {  // The THUNK
-  try {
-    // API "delete" call to delete campus (based on "campusID") from database
-    await axios.delete(`/api/campuses/${campusId}`);
-    // Delete successful so change state with dispatch
-    dispatch(ac.deleteCampus(campusId));
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-// Edit Campus
-// THUNK CREATOR:
-export const editCampusThunk = (campus) => async (dispatch) => {  //The THUNK
-  try {
-    // API "put" call to update campus (based on "id" and "student" object's data) from database
-    let updatedCampus = await axios.put(`/api/campuses/${campus.id}`, campus);
-
-    // Update successful so change state with dispatch
-    dispatch(ac.editCampus(updatedCampus));
-  } catch (err) {
-    console.error(err);
-  }
-};
-
 // Single Campus
 // THUNK CREATOR:
 export const fetchCampusThunk = (id) => async (dispatch) => {  // The THUNK
@@ -69,6 +27,39 @@ export const fetchCampusThunk = (id) => async (dispatch) => {  // The THUNK
     // API "get" call to get a student data (based on "id")from database
     let res = await axios.get(`/api/campuses/${id}`);  
     dispatch(ac.fetchCampus(res.data));
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+export const addCampusThunk = (campus) => async (dispatch) => {
+  try {
+    console.log(campus)
+    let res = await axios.post(`/api/campuses`, campus);
+    dispatch(ac.addCampus(res.data));
+    return res.data;
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+//Delete campus
+export const deleteCampusThunk = id => async dispatch => {
+  try {
+    await axios.delete(`/api/campuses/${id}`);
+    //delete succesful so change state with dispatch
+    dispatch(ac.deleteCampus(id));
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+// Edit Campus
+export const editCampusThunk = campus => async dispatch => {
+  try {
+    let updatedCampus = await axios.put(`/api/campuses/${campus.id}`, campus);
+    dispatch(ac.editCampus(updatedCampus));
+    return updatedCampus.data;
   } catch(err) {
     console.error(err);
   }

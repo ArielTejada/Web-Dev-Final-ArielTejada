@@ -19,6 +19,7 @@ const Student = db.define("student", {
 
   email: {
     type: Sequelize.STRING,
+    defaultValue: "no email",
     allowNull: false
   },
 
