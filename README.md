@@ -1,6 +1,6 @@
 # Web-Dev-Final-ArielTejada
 
-Team: Ariel Tejada Worked Solo 
+Team: Ariel Tejada 12142319 Worked Alone
 
 This repository is the server (back-end) starter code for Final Project (CRUD Application).
 
