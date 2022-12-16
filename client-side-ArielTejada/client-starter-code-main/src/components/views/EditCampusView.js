@@ -11,9 +11,12 @@ const styles = makeStyles( () => ({
     margin: 'auto',
   },
   title: {
-    flexGrow: 1,
-    textAlign: 'left',
-    textDecoration: 'none'
+    textAlign: 'center',
+    textDecoration: 'none',
+    fontFamily: 'Arial',
+    fontSize: '3rem',
+    outline: '2px solid black',
+    backgroundColor: '#00A6ED'
   }, 
   customizeAppBar:{
     backgroundColor: '#11153e',
@@ -35,7 +38,7 @@ const EditCampusView = (props) => {
   // Render an Edit Campus view with an input form
   return (
     <div>
-      <h1>Edit Campus</h1>
+      <h1 className={classes.title}>Edit Campus</h1>
 
       <div className={classes.root}>
         <div className={classes.formContainer}>
