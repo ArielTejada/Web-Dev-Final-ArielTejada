@@ -77,7 +77,7 @@ class EditStudentContainer extends Component {
           gpa: 0,
           campusId: null, 
           redirect: true, 
-            redirectId: newStudent.id
+          redirectId: this.props.match.params.id
         });
     }
 
@@ -90,7 +90,7 @@ class EditStudentContainer extends Component {
           return (<Redirect to={`/student/${this.state.redirectId}`}/>)
         }
         return (
-            <EditStudentView 
+          <EditStudentView 
             student={this.props.student}
             editStudent={this.props.editStudent}
             deleteStudent={this.props.deleteStudent}

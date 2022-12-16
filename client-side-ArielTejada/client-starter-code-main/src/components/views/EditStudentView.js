@@ -11,50 +11,51 @@ const styles = makeStyles(() => ({
     flexGrow: 1,
   },
   title: {
-    flexGrow: 1,
-    textAlign: "left",
-    fontType: "bold",
-    fontFamily: "Georgia, serif",
-    fontSize: "35px",
-    color: "#9ebe35",
-  },
+    textAlign: 'center',
+    textDecoration: 'none',
+    fontFamily: 'Arial',
+    fontSize: '3rem',
+    backgroundColor: '#00A6ED',
+    marginRight: '10%'
+  }, 
   appBar: {
-    backgroundColor: "#11153e",
+    backgroundColor: "#00A6ED",
     shadows: ["none"],
   },
   greeting: {
-    display: "flex",
-    justifyContent: "center",
-    backgroundColor: "#f6f6f6",
-    fontFamily: "Georgia, serif",
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: 'white',
     width: "50%",
     margin: "auto",
   },
   links: {
     textDecoration: "none",
+    display: 'flex',
+    flexDirection: 'row',
   },
-  formContainer: {
-    width: "500px",
-    backgroundColor: "#f0f0f5",
-    borderRadius: "5px",
-    margin: "auto",
+  formContainer:{  
+    width: '45%',
+    backgroundColor: '#f0f0f5',
+    borderRadius: '5px',
+    margin: '5% auto 10% auto',
   },
-  // title: {
-  //   flexGrow: 1,
-  //   textAlign: 'left',
-  //   textDecoration: 'none'
-  // },
-  customizeAppBar: {
-    backgroundColor: "#11153e",
-    shadows: ["none"],
+  customizeAppBar:{
+    backgroundColor: '#11153e',
+    shadows: ['none'],
   },
-  formTitle: {
-    backgroundColor: "#c5c8d6",
-    marginBottom: "15px",
-    textAlign: "center",
-    borderRadius: "5px 5px 0px 0px",
-    padding: "3px",
+  formTitle:{
+    backgroundColor:'#c5c8d6',
+    marginBottom: '15px',
+    textAlign: 'center',
+    borderRadius: '5px 5px 0px 0px',
+    padding: '3px'
   },
+  navButton: {
+    width: '100%',
+    height: '50%',
+    margin: '0 10% 0 10%'
+  }
 }));
 
 const EditStudentView = (props) => {
@@ -66,7 +67,7 @@ const EditStudentView = (props) => {
     <div className={classes.root}>
       <AppBar position="static" elevation={0} className={classes.appBar}>
         <Toolbar>
-          <Typography variant="h6" className={classes.title} color="#9ebe35">
+          <Typography className={classes.title} color="#9ebe35">
             Campus Manager
           </Typography>
 
@@ -74,7 +75,7 @@ const EditStudentView = (props) => {
             <Button
               variant="contained"
               color="white"
-              style={{ marginRight: "10px", height: "60px", width: "200px" }}
+              className={classes.navButton}
             >
               Home
             </Button>
@@ -84,7 +85,7 @@ const EditStudentView = (props) => {
             <Button
               variant="contained"
               color="white"
-              style={{ marginRight: "10px", height: "60px", width: "200px" }}
+              className={classes.navButton}
             >
               All Campuses
             </Button>
@@ -94,7 +95,7 @@ const EditStudentView = (props) => {
             <Button
               variant="contained"
               color="white"
-              style={{ marginRight: "10px", height: "60px", width: "200px" }}
+              className={classes.navButton}
             >
               All Students
             </Button>
