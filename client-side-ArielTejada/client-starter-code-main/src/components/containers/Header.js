@@ -14,7 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 
 // Define styling for the header
-const useStyles = makeStyles(theme => ({
+const styles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
@@ -23,11 +23,11 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'left',
     fontType: 'bold',
     fontFamily: 'sans-serif', 
-    fontSize: '35px', 
-    color: 'darkblue'
+    fontSize: '2.5rem', 
+    color: 'white'
   },
   appBar:{
-    backgroundColor: '#fcb6bb',
+    backgroundColor: '#00A6ED',
     shadows: ['none'],
   },
   greeting:{
@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
 // Header component, displayed on every page
 // Links to every other page
 const Header = () => {
-  const classes = useStyles();
+  const classes = styles();
   return (
     <div className={classes.root}>
       <AppBar position="static" elevation={0} className={classes.appBar}>

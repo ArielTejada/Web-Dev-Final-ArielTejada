@@ -26,6 +26,11 @@ const CampusView = (props) => {
           </div>
         );
       })}
+
+      <Link to={`/editcampus/${campus.id}`}>
+          <button>Edit Campus</button>
+      </Link>
+
     </div>
   );
 };
